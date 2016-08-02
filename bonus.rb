@@ -3,10 +3,7 @@ module HelperMethods
         # rule0 = string == 'and' || string == 'or' || string == 'in' || string == 'from' || string == 'the' || string == 'of'
         rule0 = -> (x) { x == 'and' }
 
-        strings = string.split(' ')
-        puts strings.collect(&rule0)
-
-        string.split.map(&:capitalize).join(' ')
+        puts string.split.collect{|x| rule0  ? x : x.capitalize}.join(' ')
     end
 end
 
