@@ -13,5 +13,7 @@ module HelperMethods
     end
 end
 
-p HelperMethods.titleize('hello world in the of and or from')
-p HelperMethods.titleize('I like coding')
+if __FILE__ ==$0
+    p HelperMethods.titleize('hello world in the of and or from')
+    p HelperMethods.titleize('I like coding')
+end
