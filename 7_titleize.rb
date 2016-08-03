@@ -9,11 +9,11 @@ module HelperMethods
                 result_array << string.capitalize
             end
         end
-        result_array.join(" ")
+        result_array.join(' ')
     end
 end
 
-if __FILE__ ==$0
+if __FILE__ == $PROGRAM_NAME
     p HelperMethods.titleize('hello world in the of and or from')
     p HelperMethods.titleize('I like coding')
 end
