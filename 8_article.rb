@@ -1,4 +1,4 @@
-load "titleize.rb"
+require "./titleize.rb"
 
 module Blog
     class Article

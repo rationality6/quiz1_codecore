@@ -1,12 +1,12 @@
 var primeNumbers = function(num) {
     array = []
     for (var i = 0; i <= num; i++) {
-        if (num % i == 0) {
+        if (num % i === 0) {
             array.push(i)
         }
     }
     return isPrime(array)
-        // return array 
+        // return array
 }
 
 var isPrime = function(arr) {
