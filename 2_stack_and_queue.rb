@@ -1,47 +1,53 @@
-# Stack = FIFO (First in first out)
-# Queue = FILO (First in last out)
+# Stack = LIFO (Last in first out)
+# Queue = FIFO (First in first out)
 
 class Stack
-    attr_accessor :array0
-    def initialize
-        @array0 = [1, 2, 3, 4, 5]
-    end
+  attr_accessor :array0
 
-    def add
-        @array0.push(rand(10))
-    end
+  def initialize
+    @array0 = []
+  end
 
-    def remove
-        @array0.pop
-        @array0
-    end
+  def add(x)
+    array0 << x
+  end
+
+  def remove
+    array0.pop
+  end
 end
 
 class Queue
-    attr_accessor :array0
-    def initialize
-        @array0 = [1, 2, 3, 4, 5]
-    end
+  attr_accessor :array0
 
-    def add
-        # @array0.new(rand(10))
-    end
+  def initialize
+    @array0 = []
+  end
 
-    def remove
-        @array0.shift
-        @array0
-    end
+  def add(x)
+    array0 << x
+  end
+
+  def remove
+    array0.shift
+  end
 end
 
 stack = Stack.new
-print stack.add, "\n"
-print stack.add, "\n"
+for i in(1..4)
+  stack.add(i)
+  p stack.array0
+end
+
 print stack.remove, "\n"
 print stack.remove, "\n"
-print stack.remove, "\n"
+
 queue = Queue.new
-print queue.add, "\n"
-print queue.add, "\n"
-print queue.remove, "\n"
+p queue.array0
+for i in (1..4)
+  queue.add(i)
+  p queue.array0
+end
+
 print queue.remove, "\n"
 print queue.remove, "\n"

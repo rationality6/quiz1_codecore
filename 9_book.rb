@@ -1,22 +1,22 @@
 class Book
-    attr_accessor :title, :chapter
-    def initialize
-        @title = ''
-        @chapter = []
-    end
+  attr_accessor :title, :chapter
+  def initialize
+    @title = ''
+    @chapter = []
+  end
 
-    def add_chapter(n)
-        chapter << n
-    end
+  def add_chapter(n)
+    chapter << n
+  end
 
-    def chapters
-        print "Your book: #{title} has #{chapter.length} chapters: \n"
-        count = 1
-        for i in @chapter
-            print "#{count}. #{i} \n"
-            count += 1
-        end
+  def chapters
+    print "Your book: #{title} has #{chapter.length} chapters: \n"
+    count = 1
+    for i in @chapter
+      print "#{count}. #{i} \n"
+      count += 1
     end
+  end
 end
 
 book = Book.new

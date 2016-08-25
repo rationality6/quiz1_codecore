@@ -1,22 +1,22 @@
-require "./titleize.rb"
+require './7_titleize.rb'
 
 module Blog
-    class Article
-        attr_accessor :title, :body
-        def initialize(title, body)
-            @title = title
-            @body = body
-        end
+  class Article
+    attr_accessor :title, :body
+    include HelperMethods
+    def initialize(title, body)
+      @title = title
+      @body = body
     end
+  end
 end
 
 class Snippet < Blog::Article
-    include HelperMethods
-    def initialize(title, body)
-        super
-        @title = HelperMethods.titleize(title)
-        @body = @body[0..100] + '...' if @body.length > 100
-    end
+  def initialize(title, body)
+    super
+    @title = HelperMethods.titleize(title)
+    @body = @body[0..100] + '...' if @body.length > 100
+  end
 end
 
 title = 'Lorem ipsum dolor'

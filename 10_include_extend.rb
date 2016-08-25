@@ -1,15 +1,15 @@
 module HelperMethods
-    def foo
-        "foo"
-    end
+  def foo
+    'foo'
+  end
 end
 
 class Include_example
-    include HelperMethods
+  include HelperMethods
 end
 
 class Extend_example
-    extend HelperMethods
+  extend HelperMethods
 end
 
 include0 = Include_example.new
