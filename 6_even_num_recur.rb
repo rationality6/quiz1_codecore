@@ -1,40 +1,28 @@
 require 'benchmark'
 
-def even_num(num)
+def even_num(num = 10)
   result_array = []
   for i in 1..num
-    if i.even?
-      result_array << i
-    end
+    result_array << i * 2
   end
   result_array
 end
 
-def even_num_recur(arr)
-  if arr.empty?
-    0
-  elsif arr[0].even?
-    return arr[0]
+def even_num_recur(num = 10, count = 1)
+  if count > num
+    []
   else
-    even_num_recur(arr[1..-1])
+    [count * 2] + even_num_recur(num, count + 1)
   end
 end
 
-p even_num(10)
-
-# Benchmark.bm do |x|
-#   x.report do
-#     1_000_000.times { even_num(array0) }
-#   end
-#   x.report do
-#     1_000_000.times { even_num_recur(array0) }
-#   end
-# end
-
-# The recursion one is faster
-
-def loop(n=10)
-  (1..n).inject([]) {|r,i| r << i*2}
+Benchmark.bm do |x|
+  x.report do
+    100_000.times { even_num }
+  end
+  x.report do
+    100_000.times { even_num_recur }
+  end
 end
 
-p loop
+# The recursion one is slower
